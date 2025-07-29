@@ -1,0 +1,82 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Menu e conteúdo */
+  grid-template-rows: auto 1fr auto; /* Header, conteúdo, e footer */
+  grid-template-areas: 
+    "header header"
+    "menu main"
+    "footer footer";
+  gap: 10px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #9ecbff;
+  padding: 20px;
+  text-align: center;
+  color: #f2faff;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h4{
+    color: rgb(106, 156, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p {
+  color: rgb(6, 6, 130);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+
+.mensagem {
+  color: rgb(6, 6, 130);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+ 
+img {
+    width: 150px;
+}
+
+.menu {
+  grid-area: menu;
+  background-color: #4190d0;
+  padding: 20px;
+  width: 200px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: aliceblue;
+}
+
+.main {
+  grid-area: main;
+  background-color: #f2faff;
+  padding: 20px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #8ac1ff;
+  padding: 20px;
+  text-align: center;
+  color: azure;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Remover a coluna do menu */
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+  
+  .menu {
+    display: none; /* Esconder o menu em telas pequenas */
+  }
+}
+
+
